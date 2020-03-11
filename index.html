@@ -22,71 +22,7 @@
 <div id="Tab1" class="tabcontent">
   <h3>1st Chapter</h3>
   <p>This is the 1st chapter content.</p>
-  <h2><a href = "#customstart">Customizing Startup</a></h2>
-  <h2><a href = "#gethelp">Getting Help</a></h2>
   
-  <h2><a name = "customstart">Customizing Startup</a></h2>
-
-<p>You can customize the R environment through a site initialization file or a directory initialization file. R will always source the Rprofile.site file first. On Windows, the file is in the C:\Program Files\R\R-n.n.n\etc directory. You can also place a .Rprofile file in any directory that you are going to run R from or in the user home directory.</p>
-
-<p>At startup, R will source the Rprofile.site file. It will then look for a .Rprofile file to source in the current working directory. If it doesn't find it, it will look for one in the user's home directory. There are two special functions you can place in these files. .First( ) will be run at the start of the R session and .Last( ) will be run at the end of the session.</p>
-
-<pre><code>
-# Sample Rprofile.site file 
-
-# Things you might want to change
-# options(papersize="a4") 
-# options(editor="notepad") 
-# options(pager="internal")
-
-# R interactive prompt 
-# options(prompt="> ")
-# options(continue="+ ") 
-
-# to prefer Compiled HTML 
-help options(chmhelp=TRUE) 
-# to prefer HTML help 
-# options(htmlhelp=TRUE) 
-
-# General options 
-options(tab.width = 2) 
-options(width = 130)
-options(graphics.record=TRUE) 
-
-.First <- function(){
- library(Hmisc)
- library(R2HTML)
- cat("\nWelcome at", date(), "\n") 
-}
-
-.Last <- function(){ 
- cat("\nGoodbye at ", date(), "\n")
-}
-</code></pre>
-        
-  <h2><a name = "gethelp">Getting Help</a></h2>
-  <p>Once R is installed, there is a comprehensive built-in help system. At the program's command prompt you can use any of the following:</p>
-  
-<pre><code>
-help.start()   # general help
-help(foo)      # help about function foo
-?foo           # same thing 
-apropos("foo") # list all functions containing string foo
-example(foo)   # show an example of function foo
-
-# search for foo in help manuals and archived mailing lists
-RSiteSearch("foo")
-
-# get vignettes on using installed packages
-vignette()      # show available vingettes
-vignette("foo") # show specific vignette
-</code></pre>
-
-  <h3>Sample Datasets</h3>
-  <p>R comes with a number of sample datasets that you can experiment with. Type data( ) to see the available datasets. The results will depend on which packages you have loaded. Type help(datasetname) for details on a sample dataset.</p>
-  
-</div>
-
 <div id="Tab2" class="tabcontent">
   <h3>2nd Chapter</h3>
   <p>This is the 2nd chapter content.</p> 
@@ -117,7 +53,7 @@ vignette("foo") # show specific vignette
   <p>This is the 7th chapter content.</p>
 </div>
 
-<script>
+<!-- <script>
 function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -138,6 +74,6 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-  </script>
+  </script> -->
 
 </body>
